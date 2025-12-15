@@ -12,7 +12,7 @@ namespace Model
         public int Year {  get; set; }
         public string ScienceArea {  get; set; }
 
-        public AcademicDegree(IEmployee employee) : base(employee) { }
+        public AcademicDegree(Employee employee) : base(employee) { }
 
         public override string GetInfo()
         {

@@ -8,30 +8,25 @@ namespace Model
 {
     public class EmployeeDecorator : Employee
     {
-        protected Employee employee { get; set; } //тута либо интерфейс делать работника либо поменять название 
-
-        public string Name { get; set; }
-        public double BaseSalary { get; set; }
-        public IBankService BankService { get; set; }
-
+        protected Employee decoratorEmployee { get; set; }
 
         public EmployeeDecorator(Employee employee)
         {
-            Employee = employee;
+            decoratorEmployee = employee;
 
             Name = employee.Name;
             BaseSalary = employee.BaseSalary;
             BankService = employee.BankService;
         }
 
-        public virtual string GetInfo()
+        public override string GetInfo()
         {
-            return Employee.GetInfo();
+            return decoratorEmployee.GetInfo();
         }
 
-        public virtual double CalculateSalary()
+        public override double CalculateSalary()
         {
-            return Employee.CalculateSalary();
+            return decoratorEmployee.CalculateSalary();
         }
     }
 }
