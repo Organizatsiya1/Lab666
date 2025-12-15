@@ -13,7 +13,7 @@ namespace Model
         public IBankService BankService {  get; set; }
         public virtual string GetInfo()
         {
-            return GetType().Name.ToString();
+            return GetType().Name;
         }
         public virtual double CalculateSalary()
         {

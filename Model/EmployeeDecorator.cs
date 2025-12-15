@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model
+﻿namespace Model
 {
-    public class EmployeeDecorator : Employee
+    public abstract class EmployeeDecorator : Employee
     {
         protected Employee decoratorEmployee { get; set; }
 
