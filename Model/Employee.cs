@@ -11,9 +11,9 @@ namespace Model
         public string Name {  get; set; }
         public double BaseSalary {  get; set; }
         public IBankService BankService {  get; set; }
-        public string GetInfo()
+        public virtual string GetInfo()
         {
-            return GetType().Name.ToString();
+            return GetType().Name;
         }
         public virtual double CalculateSalary()
         {

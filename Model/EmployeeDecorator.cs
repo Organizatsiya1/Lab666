@@ -6,32 +6,27 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class EmployeeDecorator : Employee
+    public abstract class EmployeeDecorator : Employee
     {
-        protected Employee employee { get; set; } //тута либо интерфейс делать работника либо поменять название 
-
-        public string Name { get; set; }
-        public double BaseSalary { get; set; }
-        public IBankService BankService { get; set; }
-
+        protected Employee decoratedEmployee { get; set; }
 
         public EmployeeDecorator(Employee employee)
         {
-            Employee = employee;
+            decoratedEmployee = employee;
 
             Name = employee.Name;
             BaseSalary = employee.BaseSalary;
             BankService = employee.BankService;
         }
 
-        public virtual string GetInfo()
+        public override string GetInfo()
         {
-            return Employee.GetInfo();
+            return decoratedEmployee.GetInfo();
         }
 
-        public virtual double CalculateSalary()
+        public override double CalculateSalary()
         {
-            return Employee.CalculateSalary();
+            return decoratedEmployee.CalculateSalary();
         }
     }
 }

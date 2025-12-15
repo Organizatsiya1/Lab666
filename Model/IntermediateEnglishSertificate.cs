@@ -10,13 +10,11 @@ namespace Model
     {
         public string ExaminationTitle {  get; set; }
         public int YearOfSertificate {  get; set; }
-        public DateTime? CertificateDate { get; set; }
 
         public IntermediateEnglishSertificate(Employee employee) : base(employee) { }
 
         public override string GetInfo()
         {
-            string datePart = CertificateDate.HasValue ? $", Date: {CertificateDate.Value:dd.MM.yyyy}" : "";
             return $"{base.GetInfo()}, Знание английского (Сертификат: {ExaminationTitle}, Год: {YearOfSertificate})";
         }
     }
